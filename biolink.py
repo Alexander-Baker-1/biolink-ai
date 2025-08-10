@@ -242,7 +242,7 @@ class DataDownloader:
     """Handles downloading and managing protein and binding data"""
     
     def __init__(self):
-        self.data_dir = Path("biolink_data")
+        self.data_dir = Path("mini_alphafold_data")
         self.data_dir.mkdir(exist_ok=True)
         self.pdb_dir = self.data_dir / "pdb"
         self.pdb_dir.mkdir(exist_ok=True)
@@ -1097,7 +1097,7 @@ class LightweightBindingPredictor:
         import hashlib
         from pathlib import Path
 
-        data_dir = Path(getattr(getattr(app, "downloader", None), "data_dir", "biolink_data"))
+        data_dir = Path(getattr(getattr(app, "downloader", None), "data_dir", "mini_alphafold_data"))
         data_dir.mkdir(exist_ok=True)
 
         def file_hash(path):
