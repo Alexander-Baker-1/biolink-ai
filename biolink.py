@@ -242,7 +242,7 @@ class DataDownloader:
     """Handles downloading and managing protein and binding data"""
     
     def __init__(self):
-        self.data_dir = Path("mini_alphafold_data")
+        self.data_dir = Path("biolink_data")
         self.data_dir.mkdir(exist_ok=True)
         self.pdb_dir = self.data_dir / "pdb"
         self.pdb_dir.mkdir(exist_ok=True)
@@ -1097,7 +1097,7 @@ class LightweightBindingPredictor:
         import hashlib
         from pathlib import Path
 
-        data_dir = Path(getattr(getattr(app, "downloader", None), "data_dir", "mini_alphafold_data"))
+        data_dir = Path(getattr(getattr(app, "downloader", None), "data_dir", "biolink_data"))
         data_dir.mkdir(exist_ok=True)
 
         def file_hash(path):
@@ -1197,7 +1197,7 @@ class LightweightBindingPredictor:
 # MAIN APP
 # =========================
 class BioLinkApp:
-    """Main application class for Mini AlphaFold binding predictor"""
+    """Main application class for BioLink binding predictor"""
     
     def __init__(self):
         self.downloader = DataDownloader()
@@ -1528,8 +1528,8 @@ def launch_ui(app):
             )
 
     # Create Gradio interface
-    with gr.Blocks(title="Mini AlphaFold Binding Predictor") as interface:
-        gr.Markdown("## Mini AlphaFold: Protein-Ligand Binding Predictor\nEnter a SMILES string and select a protein target to predict binding affinity.")
+    with gr.Blocks(title="BioLink Binding Predictor") as interface:
+        gr.Markdown("## BioLink: Protein-Ligand Binding Predictor\nEnter a SMILES string and select a protein target to predict binding affinity.")
 
         with gr.Row():
             with gr.Column():
@@ -1581,7 +1581,7 @@ def launch_ui(app):
 # TRAINING BLOCK
 # =========================
 if __name__ == "__main__":
-    print("Mini AlphaFold Training Pipeline")
+    print("BioLink Training Pipeline")
 
     try:
         # Initialize application
@@ -1609,7 +1609,7 @@ if __name__ == "__main__":
 
 # Application Launch
 if __name__ == "__main__":
-    print("Loading Mini AlphaFold Application...")
+    print("Loading BioLink Application...")
 
     try:
         # Load pre-trained model
