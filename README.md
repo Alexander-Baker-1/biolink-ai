@@ -18,11 +18,16 @@ While AlphaFold revolutionized protein structure prediction, it requires enormou
 
 ```bash
 # Clone the repository
-git clone https://github.com/Alexander-Baker-1/biolink-ai.git
+git clone https://github.com/[your-username]/biolink-ai.git
 cd biolink-ai
 
+# Create virtual environment
+python -m venv venv
+venv\Scripts\activate  # Windows
+# source venv/bin/activate  # Mac/Linux
+
 # Install dependencies
-pip install -r requirements.txt
+pip install pandas numpy scikit-learn xgboost rdkit biopython gradio plotly requests
 
 # Run the application
 python biolink.py
@@ -56,12 +61,19 @@ Then open the provided URL to use the interactive web interface.
 
 ## Dependencies
 
-- pandas==2.0.3
-- numpy<2.0
+- pandas>=2.1.0
+- numpy>=1.24.0
 - scikit-learn>=1.3.0
 - xgboost>=1.7.0
-- rdkit-pypi==2022.9.5
+- rdkit
 - biopython>=1.81
-- gradio>=3.0.0
-- plotly>=5.0.0
-- requests>=2.25.0
+- gradio>=4.0.0
+- plotly>=5.15.0
+- requests>=2.28.0
+
+## Performance
+
+- Test Set Spearman Correlation: 0.678
+- Test Set RMSE: 0.639 pIC50 units
+- Training Data: 135 protein-ligand pairs from BindingDB
+- Feature Space: 4111 dimensions (Morgan fingerprints + physicochemical + target encoding)
