@@ -1,13 +1,13 @@
 # BioLink - Lightweight Protein-Ligand Binding Predictor
 # Core dependencies
 
-pandas==2.0.3
-numpy<2.0
+pandas>=2.1.0
+numpy>=1.24.0
 scikit-learn>=1.3.0
 xgboost>=1.7.0
 
 # Molecular informatics
-rdkit-pypi==2022.9.5
+rdkit
 
 # Bioinformatics
 biopython>=1.81
