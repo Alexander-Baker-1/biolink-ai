@@ -12,21 +12,6 @@ import sys
 import os
 from pathlib import Path
 
-def pip_install(packages):
-    """Install required packages"""
-    subprocess.check_call([sys.executable, "-m", "pip", "install", "-q"] + packages)
-
-# Install dependencies
-pip_install([
-    "pandas==2.0.3",
-    "numpy<2.0",
-    "rdkit-pypi==2022.9.5",
-    "biopython>=1.81",
-    "requests",
-    "plotly",
-    "gradio",
-])
-
 import numpy as np
 import pandas as pd
 import io
@@ -1595,7 +1580,7 @@ if __name__ == "__main__":
 
     try:
         # Initialize application
-        app = MiniAlphaFoldApp()
+        app = BioLinkApp()
         app.setup_data()
 
         # Ensure predictor exists
