@@ -18,7 +18,7 @@ While AlphaFold revolutionized protein structure prediction, it requires enormou
 
 ```bash
 # Clone the repository
-git clone https://github.com/[your-username]/biolink-ai.git
+git clone https://github.com/Alexander-Baker-1/biolink-ai.git
 cd biolink-ai
 
 # Create virtual environment
