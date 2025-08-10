@@ -22,6 +22,11 @@ import plotly.graph_objects as go
 from rdkit import Chem
 from rdkit.Chem import Descriptors, AllChem, rdDepictor
 from rdkit.Chem.Draw import rdMolDraw2D
+
+# Disable RDKit warnings
+from rdkit import RDLogger
+RDLogger.DisableLog('rdApp.*')
+
 from Bio.PDB import PDBParser, MMCIFParser, DSSP, is_aa, PDBList
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.model_selection import train_test_split, cross_val_score, KFold, cross_val_predict
